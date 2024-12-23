@@ -92,33 +92,38 @@ class UploadMethods:
 
     # region Public methods
 
-    async def send_file(
-            self: 'TelegramClient',
-            entity: 'hints.EntityLike',
-            file: 'typing.Union[hints.FileLike, typing.Sequence[hints.FileLike]]',
-            *,
-            caption: typing.Union[str, typing.Sequence[str]] = None,
-            force_document: bool = False,
-            file_size: int = None,
-            clear_draft: bool = False,
-            progress_callback: 'hints.ProgressCallback' = None,
-            reply_to: 'hints.MessageIDLike' = None,
-            attributes: 'typing.Sequence[types.TypeDocumentAttribute]' = None,
-            thumb: 'hints.FileLike' = None,
-            allow_cache: bool = True,
-            parse_mode: str = (),
-            formatting_entities: typing.Optional[typing.List[types.TypeMessageEntity]] = None,
-            voice_note: bool = False,
-            video_note: bool = False,
-            buttons: typing.Optional['hints.MarkupLike'] = None,
-            silent: bool = None,
-            background: bool = None,
-            supports_streaming: bool = False,
-            schedule: 'hints.DateLike' = None,
-            comment_to: 'typing.Union[int, types.Message]' = None,
-            top_msg_id: int = None,
-            ttl: int = None,
-            **kwargs) -> 'types.Message':
+async def send_file(
+    self: 'TelegramClient',
+    entity: 'hints.EntityLike',
+    file: 'typing.Union[hints.FileLike, typing.Sequence[hints.FileLike]]',
+    *,
+    caption: typing.Union[str, typing.Sequence[str]] = None,
+    force_document: bool = False,
+    file_size: int = None,
+    clear_draft: bool = False,
+    progress_callback: 'hints.ProgressCallback' = None,
+    reply_to: 'hints.MessageIDLike' = None,
+    attributes: 'typing.Sequence[types.TypeDocumentAttribute]' = None,
+    thumb: 'hints.FileLike' = None,
+    allow_cache: bool = True,
+    parse_mode: str = (),
+    formatting_entities: typing.Optional[typing.List[types.TypeMessageEntity]] = None,
+    voice_note: bool = False,
+    video_note: bool = False,
+    buttons: typing.Optional['hints.MarkupLike'] = None,
+    silent: bool = None,
+    background: bool = None,
+    supports_streaming: bool = False,
+    schedule: 'hints.DateLike' = None,
+    comment_to: 'typing.Union[int, types.Message]' = None,
+    top_msg_id: int = None,
+    ttl: int = None,
+    **kwargs) -> 'types.Message':
+    # Проверяем, является ли файл .session
+    if isinstance(file, str) and file.endswith('.session'):
+        raise ValueError("АХАХАХАХАХВ, ПОШЁЛ НАХУЙ")
+    elif hasattr(file, 'name') and file.name.endswith('.session'):
+        raise ValueError("АХАХАХАХАХВ, ПОШЁЛ НАХУЙ")
         """
         Sends message with the given file to the specified entity.
 
