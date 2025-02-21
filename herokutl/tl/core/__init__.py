@@ -1,21 +1,15 @@
 """
-This module holds core "special" types, which are more convenient ways
-to do stuff in a `telethon.network.mtprotosender.MTProtoSender` instance.
+   __  __                __             ________
+   / / / /__  _________  / /____  __    /_  __/ /
+  / /_/ / _ \/ ___/ __ \/ //_/ / / /_____/ / / /
+ / __  /  __/ /  / /_/ / ,< / /_/ /_____/ / / /___
+/_/ /_/\___/_/   \____/_/|_|\__,_/     /_/ /_____/
 
-Only special cases are gzip-packed data, the response message (not a
-client message), the message container which references these messages
-and would otherwise conflict with the rest, and finally the RpcResult:
+(C) 2025-2026 https://github.com/Plovchikdeval/Heroku-tl
+Licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
 
-    rpc_result#f35c6d01 req_msg_id:long result:bytes = RpcResult;
-
-Three things to note with this definition:
-1. The constructor ID is actually ``42d36c2c``.
-2. Those bytes are not read like the rest of bytes (length + payload).
-   They are actually the raw bytes of another object, which can't be
-   read directly because it depends on per-request information (since
-   some can return ``Vector<int>`` and ``Vector<long>``).
-3. Those bytes may be gzipped data, which needs to be treated early.
 """
+
 from .tlmessage import TLMessage
 from .gzippacked import GzipPacked
 from .messagecontainer import MessageContainer

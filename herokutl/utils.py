@@ -1,7 +1,15 @@
 """
-Utilities for working with the Telegram API itself (such as handy methods
-to convert between an entity like a User, Chat, etc. into its Input version)
+   __  __                __             ________
+   / / / /__  _________  / /____  __    /_  __/ /
+  / /_/ / _ \/ ___/ __ \/ //_/ / / /_____/ / / /
+ / __  /  __/ /  / /_/ / ,< / /_/ /_____/ / / /___
+/_/ /_/\___/_/   \____/_/|_|\__,_/     /_/ /_____/
+
+(C) 2025-2026 https://github.com/Plovchikdeval/Heroku-tl
+Licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+
 """
+
 import base64
 import binascii
 import imghdr

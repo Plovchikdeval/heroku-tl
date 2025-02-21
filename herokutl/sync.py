@@ -1,15 +1,15 @@
 """
-This magical module will rewrite all public methods in the public interface
-of the library so they can run the loop on their own if it's not already
-running. This rewrite may not be desirable if the end user always uses the
-methods they way they should be ran, but it's incredibly useful for quick
-scripts and the runtime overhead is relatively low.
+   __  __                __             ________
+   / / / /__  _________  / /____  __    /_  __/ /
+  / /_/ / _ \/ ___/ __ \/ //_/ / / /_____/ / / /
+ / __  /  __/ /  / /_/ / ,< / /_/ /_____/ / / /___
+/_/ /_/\___/_/   \____/_/|_|\__,_/     /_/ /_____/
 
-Some really common methods which are hardly used offer this ability by
-default, such as ``.start()`` and ``.run_until_disconnected()`` (since
-you may want to start, and then run until disconnected while using async
-event handlers).
+(C) 2025-2026 https://github.com/Plovchikdeval/Heroku-tl
+Licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+
 """
+
 import asyncio
 import functools
 import inspect
